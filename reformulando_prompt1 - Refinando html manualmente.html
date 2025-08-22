@@ -249,21 +249,21 @@
                 max-width: 70ch;
             }
 
-			.legend {
-				display: flex;
-				align-items: center;
-				gap: 10px;
-				flex-wrap: wrap;
-				font-size: 0.9rem;
-				color: var(--ink-soft);
-				.chip {
-					padding: 6px 10px;
-					border: 1px solid var(--cinza);
-					border-radius: 999px;
-					background: var(--white);
-					font-weight: 700;
-				}
-			}
+            .legend {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                flex-wrap: wrap;
+                font-size: 0.9rem;
+                color: var(--ink-soft);
+                .chip {
+                    padding: 6px 10px;
+                    border: 1px solid var(--cinza);
+                    border-radius: 999px;
+                    background: var(--white);
+                    font-weight: 700;
+                }
+            }
 
             .pill {
                 display: inline-flex;
@@ -1809,7 +1809,7 @@
                                                     R$ 1.200
                                                 </td>
                                             </tr>
-											<tr>
+                                            <tr>
                                                 <td class="num">1</td>
                                                 <td class="price">
                                                     R$ 9.720
@@ -2395,7 +2395,8 @@
                                         background: var(--bege);
                                         padding: 10px 12px;
                                         text-align: left;
-                                        border-bottom: 1px solid var(--cinza);
+                                        border-bottom: 1px solid
+                                            var(--cinza);
                                         font-weight: 800;
                                         color: var(--ink);
                                     }
@@ -2403,7 +2404,8 @@
                                 tbody {
                                     td {
                                         padding: 12px;
-                                        border-bottom: 1px solid var(--cinza);
+                                        border-bottom: 1px solid
+                                            var(--cinza);
                                         background: #fff;
                                     }
                                     tr:nth-child(even) td {
@@ -2433,30 +2435,28 @@
                         }
                     </style>
                     <div class="inner">
-						<div>
-							<div class="kicker">Slide 9</div>
-							<h2 class="title">
-								Indicação - Programa Todo Dia Um Pouco
-							</h2>
-						</div>
+                        <div>
+                            <div class="kicker">Slide 9</div>
+                            <h2 class="title">
+                                Indicação - Programa Todo Dia Um Pouco
+                            </h2>
+                        </div>
 
                         <div class="wrap9">
-							<div class="legend">
+                            <div class="legend">
                                 <span class="chip"
-								>Família & Amigos</span
+                                    >Família & Amigos</span
                                 >
                             </div>
 
                             <div class="card9">
-
                                 <table
                                     role="table"
                                     aria-label="Tabela de indicação - Programa Todo Dia Um Pouco (Família e Amigos)"
                                 >
                                     <thead>
                                         <tr>
-                                            <th>
-												Nº de Indicados</th>
+                                            <th>Nº de Indicados</th>
                                             <th>De</th>
                                             <th>Por</th>
                                             <th>Desconto</th>
@@ -2484,9 +2484,7 @@
                                             <td class="price">
                                                 R$ 24.000
                                             </td>
-                                            <td
-                                                class="price badge2"
-                                            >
+                                            <td class="price badge2">
                                                 R$ 21.600
                                             </td>
                                             <td class="discount">
@@ -2501,9 +2499,7 @@
                                             <td class="price">
                                                 R$ 36.000
                                             </td>
-                                            <td
-                                                class="price badge2"
-                                            >
+                                            <td class="price badge2">
                                                 R$ 30.600
                                             </td>
                                             <td class="discount">
@@ -2513,14 +2509,18 @@
                                                 R$ 10.200
                                             </td>
                                         </tr>
-                                        <tr style="color: var(--verde-forte)">
+                                        <tr
+                                            style="
+                                                color: var(
+                                                    --verde-forte
+                                                );
+                                            "
+                                        >
                                             <td class="num">3</td>
                                             <td class="price">
                                                 R$ 48.000
                                             </td>
-                                            <td
-                                                class="price badge2"
-                                            >
+                                            <td class="price badge2">
                                                 R$ 38.400
                                             </td>
                                             <td class="discount">
@@ -2530,14 +2530,16 @@
                                                 R$ 9.600
                                             </td>
                                         </tr>
-                                        <tr style="color: var(--laranja)">
+                                        <tr
+                                            style="
+                                                color: var(--laranja);
+                                            "
+                                        >
                                             <td class="num">4</td>
                                             <td class="price">
                                                 R$ 60.000
                                             </td>
-                                            <td
-                                                class="price badge2"
-                                            >
+                                            <td class="price badge2">
                                                 R$ 45.000
                                             </td>
                                             <td class="discount">
@@ -2552,7 +2554,8 @@
 
                                 <p class="footnote">
                                     Válido para quem aderir ao
-                                    Programa Premium Todo Dia Um Pouco.
+                                    Programa Premium Todo Dia Um
+                                    Pouco.
                                 </p>
                             </div>
                         </div>
@@ -2590,7 +2593,9 @@
                                 position: relative;
                                 display: grid;
                                 gap: 18px 24px;
-                                grid-template-columns: var(--timeline-w) 1fr;
+                                grid-template-columns: var(
+                                        --timeline-w
+                                    ) 1fr;
                                 padding: 8px 4px 24px 4px;
                                 /* Linha vertical contínua (sem quebras) */
                                 &::before {
