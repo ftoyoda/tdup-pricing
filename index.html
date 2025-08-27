@@ -34,7 +34,7 @@
                 --shadow: 0 10px 30px rgba(31, 41, 55, 0.12);
                 --radius: 18px;
                 --gap: clamp(16px, 2.2vw, 28px);
-                --slide-pad: clamp(18px, 4vw, 48px);
+                --slide-pad: clamp(18px, 4vw, 20px);
                 --maxw: 1200px;
                 --transition-fast: 260ms
                     cubic-bezier(0.2, 0.7, 0.2, 1);
@@ -296,7 +296,7 @@
             }
 
             /* Tabela do slide 2 */
-            table {
+            /* table {
                 width: 100%;
                 border-collapse: collapse;
                 overflow: hidden;
@@ -319,7 +319,7 @@
             }
             tbody tr:last-child td {
                 border-bottom: none;
-            }
+            } */
             .price {
                 font-weight: 800;
             }
@@ -1868,10 +1868,8 @@
                     <style>
                         /* ===== Slide 10: estilos específicos (namespaced) ===== */
                         #slide8 {
-                            .comp8 {
-                                transform: scale(0.8);
-                                transform-origin: top left;
-                                width: 125%;
+                            .inner {
+                                gap: calc(var(--gap) * 0.5);
                             }
 
                             .matrix-wrap {
@@ -1884,7 +1882,7 @@
                                 border-collapse: separate;
                                 border-spacing: 0;
                                 border: 1px solid var(--cinza);
-                                border-radius: 14px;
+                                border-radius: 10px;
                                 overflow: hidden;
                                 background: var(--white);
                                 font-size: clamp(13px, 1.4vw, 15px);
@@ -1893,11 +1891,13 @@
                                     th {
                                         text-align: center;
                                         background: var(--bege);
-                                        padding: 12px 10px;
+                                        padding: 7px 10px;
                                         border-bottom: 1px solid
                                             var(--cinza);
                                         font-weight: 800;
                                         letter-spacing: 0.02em;
+                                        font-size: 0.675rem;
+                                        text-transform: uppercase;
                                     }
 
                                     .grp {
@@ -1914,10 +1914,11 @@
 
                                 th,
                                 td {
-                                    padding: 12px 14px;
+                                    padding: 8px 14px;
                                     border-bottom: 1px solid
                                         var(--cinza);
                                     vertical-align: middle;
+                                    font-size: 0.75rem;
 
                                     &.c1,
                                     &.c0 {
@@ -1943,7 +1944,6 @@
                             /* Colunas (cores de fundo suaves) */
                             .c0 {
                                 background: var(--neutral) !important;
-                                font-weight: 800;
                             }
                             .c1 {
                                 background: #fff;
@@ -1989,18 +1989,18 @@
                                 font-weight: 800;
                                 text-transform: uppercase;
                                 letter-spacing: 0.06em;
-                                font-size: 0.82rem;
+                                font-size: 0.615rem;
                             }
                             .row-de td {
                                 background: #fcfcfc;
                             }
                             .price {
+                                font-size: 0.8rem;
                                 font-weight: 800;
-                                font-size: clamp(14px, 1.6vw, 16px);
 
                                 &.badge {
                                     display: inline-block;
-                                    padding: 8px 12px;
+                                    padding: 5px 7px;
                                     border-radius: 10px;
                                     color: #111;
                                 }
@@ -2009,19 +2009,9 @@
                                 font-weight: 800;
                             }
                             .footnote {
-                                font-size: 0.9rem;
+                                font-size: 0.8rem;
                                 color: var(--ink-soft);
-                                margin-top: 8px;
-                            }
-
-                            @media (max-width: 980px) {
-                                .comp8 {
-                                    font-size: 13px;
-
-                                    .lab {
-                                        white-space: normal;
-                                    }
-                                }
+                                margin: 0;
                             }
                         }
                     </style>
@@ -2095,7 +2085,9 @@
                                             Consultas com a Dra.
                                             Gisele
                                         </td>
-                                        <td class="c0">-</td>
+                                        <td class="c0">
+                                            <strong>1</strong>
+                                        </td>
                                         <td class="c1">
                                             <strong>1</strong>
                                         </td>
@@ -2106,18 +2098,8 @@
                                             <strong>4</strong>
                                         </td>
                                         <td class="c4">
-                                            <strong>9</strong>
+                                            <strong>7</strong>
                                         </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lab">
-                                            Bioimpedância
-                                        </td>
-                                        <td class="c0">1</td>
-                                        <td class="c1">1</td>
-                                        <td class="c2">2</td>
-                                        <td class="c3">4</td>
-                                        <td class="c4">12</td>
                                     </tr>
                                     <tr>
                                         <td class="lab">
@@ -2127,87 +2109,83 @@
                                         <td class="c1">1</td>
                                         <td class="c2">2</td>
                                         <td class="c3">4</td>
-                                        <td class="c4">9</td>
+                                        <td class="c4">
+                                            <strong>Ilimitado</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lab">
+                                            Bioimpedância
+                                        </td>
+                                        <td class="c0">1</td>
+                                        <td class="c1">1</td>
+                                        <td class="c2">2</td>
+                                        <td class="c3">6</td>
+                                        <td class="c4">
+                                            <strong>Ilimitado</strong>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td class="lab">
                                             Gasto Calórico
                                             (Calorimetria)
                                         </td>
-                                        <td class="c0">
-                                            <span class="yes"
-                                                >Sim</span
-                                            >
-                                        </td>
-                                        <td class="c1">
-                                            <span class="yes"
-                                                >Sim</span
-                                            >
-                                        </td>
-                                        <td class="c2">
-                                            <span class="yes"
-                                                >Sim</span
-                                            >
-                                        </td>
-                                        <td class="c3">
-                                            <span class="yes"
-                                                >Sim</span
-                                            >
-                                        </td>
+                                        <td class="c0">1</td>
+                                        <td class="c1">1</td>
+                                        <td class="c2">2</td>
+                                        <td class="c3">6</td>
                                         <td class="c4">
-                                            <span class="yes"
-                                                >Sim</span
-                                            >
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="lab">
-                                            Treino Personalizado
-                                        </td>
-                                        <td class="c0">
-                                            <span class="no"
-                                                >Não</span
-                                            >
-                                        </td>
-                                        <td class="c1">
-                                            <span class="no"
-                                                >Não</span
-                                            >
-                                        </td>
-                                        <td class="c2">
-                                            <span class="no"
-                                                >Não</span
-                                            >
-                                        </td>
-                                        <td class="c3">
-                                            <span class="no"
-                                                >Não</span
-                                            >
-                                        </td>
-                                        <td class="c4">
-                                            <span class="yes"
-                                                >Sim</span
-                                            >
+                                            <strong>Ilimitado</strong>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="lab">
                                             Protocolos Inclusos*
                                         </td>
-                                        <td class="c0">
-                                            <strong>Nenhum</strong>
-                                        </td>
-                                        <td class="c1">
-                                            <strong>Nenhum</strong>
-                                        </td>
-                                        <td class="c2">
-                                            <strong>1</strong>
-                                        </td>
-                                        <td class="c3">
-                                            <strong>3</strong>
-                                        </td>
+                                        <td class="c0">-</td>
+                                        <td class="c1">-</td>
+                                        <td class="c2">1</td>
+                                        <td class="c3">3</td>
                                         <td class="c4">
                                             <strong>6</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lab">
+                                            Treino Personalizado
+                                        </td>
+                                        <td class="c0">-</td>
+                                        <td class="c1">-</td>
+                                        <td class="c2">-</td>
+                                        <td class="c3">-</td>
+                                        <td class="c4">
+                                            <strong>4</strong>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="lab">
+                                            Benefícios Exclusivo
+                                        </td>
+                                        <td class="c0">
+                                            <strong>-</strong>
+                                        </td>
+                                        <td class="c1">
+                                            <strong>-</strong>
+                                        </td>
+                                        <td class="c2">
+                                            <strong>-</strong>
+                                        </td>
+                                        <td class="c3">
+                                            <strong>-</strong>
+                                        </td>
+                                        <td class="c4">
+                                            <strong>
+                                                Acesso VIP a eventos
+                                                com 50% off
+                                                <br />
+                                                Prioridade máxima em
+                                                encaixes
+                                            </strong>
                                         </td>
                                     </tr>
 
@@ -2239,7 +2217,7 @@
                                             R$ 8.000
                                         </td>
                                         <td class="c4 price">
-                                            R$ 18.000
+                                            R$ 14.000
                                         </td>
                                     </tr>
                                     <tr>
@@ -2259,6 +2237,18 @@
                                             R$ 6.000
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td class="lab">
+                                            Valor estimado dos Treinos
+                                        </td>
+                                        <td class="c0 price">-</td>
+                                        <td class="c1 price">-</td>
+                                        <td class="c2 price">-</td>
+                                        <td class="c3 price">-</td>
+                                        <td class="c4 price">
+                                            R$ 2.000
+                                        </td>
+                                    </tr>
                                     <tr class="row-de">
                                         <td class="lab">De</td>
                                         <td class="c0 price">
@@ -2274,7 +2264,7 @@
                                             R$ <strong>11.000</strong>
                                         </td>
                                         <td class="c4 price">
-                                            R$ <strong>24.000</strong>
+                                            R$ <strong>22.000</strong>
                                         </td>
                                     </tr>
                                     <tr>
@@ -2320,9 +2310,9 @@
                                             >
                                         </td>
                                         <td class="c4 save">
-                                            R$ 12.000
+                                            R$ 10.000
                                             <span class="muted"
-                                                >(50%)</span
+                                                >(45%)</span
                                             >
                                         </td>
                                     </tr>
@@ -2593,9 +2583,9 @@
                                 position: relative;
                                 display: grid;
                                 gap: 18px 24px;
-                                grid-template-columns: var(
-                                        --timeline-w
-                                    ) 1fr;
+                                grid-template-columns:
+                                    var(--timeline-w)
+                                    1fr;
                                 padding: 8px 4px 24px 4px;
                                 /* Linha vertical contínua (sem quebras) */
                                 &::before {
@@ -3283,7 +3273,7 @@
 
             // Iniciar
             setActive(0);
-            // setActive(8);
+            // setActive(7);
 
             /* =========================
 			DICAS DE EDIÇÃO (comentários):
